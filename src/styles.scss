@@ -1,0 +1,20 @@
+@import './global';
+
+@import "assets/cosmo/bootstrap.css";
+//@import "assets/pulse/bootstrap.css";
+//@import "assets/zephyr/bootstrap.css";
+
+/* Importing Bootstrap SCSS file.
+@import "~bootstrap/scss/bootstrap";
+*/
+/* Importing Datepicker SCSS file.
+@import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
+*/
+
+html, body {
+  padding-top: 40px;
+}
+
+main {
+  min-height: 640px;
+}

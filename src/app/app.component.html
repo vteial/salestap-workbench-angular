@@ -1,0 +1,50 @@
+
+<header class="fixed-top bg-light border-bottom">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Workbench Angular</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+              data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+              aria-expanded="false" aria-label="Toggle navigation"
+              ng-click="isCollapsed = !isCollapsed"><span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent" uib-collapse="isCollapsed">
+        <ul class="navbar-nav me-auto" xng-if="sessionS.context.userId !== null">
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/home" ng-click="toggleMenu()">
+              <i class="bi bi-house px-1"></i>Home
+            </a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/products" ng-click="toggleMenu()">Products</a>
+          </li>
+        </ul>
+        <div class="d-flex">
+          <button type="button" class="btn btn-outline-light me-4" (click)="goTo('/sign-in')">
+            <i class="bi bi-box-arrow-in-right px-1"></i>Sign In
+          </button>
+          <button type="button" class="btn btn-warning" (click)="goTo('/sign-out')">
+            <i class="bi bi-box-arrow-in-left px-1"></i>Sign-Out
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="container p-1">
+    <strong>{{viewName}} hello...</strong>
+  </div>
+</header>
+
+<main role="main" class="container flex-shrink-0">
+  <br/>
+  <div class=".d-none .d-sm-block .d-md-none">&nbsp;</div>
+  <div><router-outlet></router-outlet></div>
+  <br/>
+</main>
+
+<footer class="footer border-top bg-light">
+  <div class="container">
+    <p class="text-center my-2">&copy; 2022 Workbench Angular</p>
+  </div>
+</footer>
+
