@@ -1,24 +1,18 @@
 import {SafeResourceUrl} from "@angular/platform-browser";
-import {prop, required} from '@rxweb/reactive-form-validators';
 import {NumberIdModel} from "./core.model";
 
 export class Product extends NumberIdModel {
 
   static readonly KEY = 'product';
 
-  @required()
   code: string;
 
-  @required()
   name: string;
 
-  @prop()
   desc: string;
 
-  @required()
   unit: number;
 
-  @required()
   rate: number
 
   status: string;
@@ -42,7 +36,6 @@ export class Product extends NumberIdModel {
 
   static createFrom(s: any): Product {
     const d = new Product();
-
     d.id = s.id;
     d.code = s.code;
     d.name = s.name;

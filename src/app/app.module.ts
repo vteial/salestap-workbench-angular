@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RxReactiveFormsModule } from '@rxweb/reactive-form-validators';
 import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -28,7 +27,6 @@ import { ProductListComponent } from './product-list/product-list.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    RxReactiveFormsModule,
     ToastrModule.forRoot({
       timeOut: 5000,
       positionClass: 'toast-top-center',

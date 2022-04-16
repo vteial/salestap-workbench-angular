@@ -1,5 +1,4 @@
 import {SafeResourceUrl} from "@angular/platform-browser";
-import {prop, required} from '@rxweb/reactive-form-validators';
 import {NumberIdModel} from "./core.model";
 
 export class User extends NumberIdModel {
@@ -10,20 +9,14 @@ export class User extends NumberIdModel {
 
   static readonly KEY = 'user';
 
-  @prop()
   email: string;
 
-  @prop()
   mobile: string;
 
-  @required()
   name: string;
 
-  // @required()
-  @prop()
   dob: Date;
 
-  @prop()
   avatarUrl: string;
 
   avatarUrlX: SafeResourceUrl | undefined;

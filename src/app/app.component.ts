@@ -1,7 +1,6 @@
 import {DomSanitizer} from "@angular/platform-browser";
 import {AfterViewInit, ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
-import {ReactiveFormConfig} from "@rxweb/reactive-form-validators";
 import {User} from "./_models/user.model";
 import {WydApiService} from "./_common/wyd-api.service";
 import {BaseComponent} from "./_common/base.component";
@@ -25,15 +24,6 @@ export class AppComponent implements OnInit, AfterViewInit {
               private router: Router,
               private readonly apiService: WydApiService,
               private readonly domSanitizer: DomSanitizer) {
-    ReactiveFormConfig.set({
-      validationMessage: {
-        required: 'This field is required.',
-        alpha: 'This should have only alphabets and spaces.',
-        minLength: 'This should have minimum of {{0}} characters.',
-        password: 'This should satisfy the above condition.',
-        compare: 'This should match with another field'
-      }
-    });
   }
 
   ngOnInit(): void {

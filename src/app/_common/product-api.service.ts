@@ -22,7 +22,7 @@ export class ProductApiService {
   }
 
   findById(id: number): Observable<any> {
-    return this.httpClient.get(`/products/${id}`);
+    return this.httpClient.get(`${this.apiPrefix}/products/${id}`);
   }
 
   create(item: Product): Observable<any> {

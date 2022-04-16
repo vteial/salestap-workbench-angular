@@ -1,7 +1,7 @@
 <div class="container">
 
   <div class="row">
-    <div class="col">
+    <div class="col-8">
       <table class="table table-condensed table-bordered table-striped">
         <thead>
         <tr>
@@ -31,48 +31,39 @@
         </tbody>
       </table>
     </div>
-    <div class="col">
-      <!--
-      <form novalidate="" name="form0" ng-class="{ 'was-validated' : form0.$dirty }">
+    <div class="col-4">
+      <form *ngIf="itemFg" [formGroup]="itemFg" (ngSubmit)="save()">
         <div>
-          <span class="text-danger" v-if="(message)">{{ message }}</span>
-          <button class="btn btn-outline-primary float-end" type="button" @click="add()">
+          <button class="btn btn-outline-primary float-end" type="button" (click)="add()">
             <strong>New</strong>
           </button>
         </div>
         <br/>
         <div class="form-group">
-          <label for="itemCode">Code <span class="text-danger">*</span></label>
-          <input id="itemCode" name="itemCode" class="form-control" placeholder="Code" type="text"
-                 v-model="item.code"
-                 required="true">
+          <label>Code <span class="text-danger">*</span></label>
+          <input class="form-control" placeholder="Code" type="text"
+                 formControlName="code">
         </div>
         <div class="form-group">
-          <label for="itemName">Name <span class="text-danger">*</span></label>
-          <input id="itemName" name="itemName" class="form-control" placeholder="Name" type="text"
-                 v-model="item.name"
-                 required="true">
+          <label>Name <span class="text-danger">*</span></label>
+          <input class="form-control" placeholder="Name" type="text"
+                 formControlName="name">
         </div>
         <div class="form-group">
-          <label for="itemUnit">Unit <span class="text-danger">*</span></label>
-          <input id="itemUnit" name="itemUnit" class="form-control" placeholder="Unit" type="text"
-                 v-model="item.unit"
-                 required="true">
+          <label>Unit <span class="text-danger">*</span></label>
+          <input class="form-control" placeholder="Unit" type="text"
+                 formControlName="unit">
         </div>
         <div class="form-group">
-          <label for="itemRate">Rate <span class="text-danger">*</span></label>
-          <input id="itemRate" name="itemRate" class="form-control" placeholder="Rate" type="text"
-                 v-model="item.rate"
-                 required="true">
+          <label>Rate <span class="text-danger">*</span></label>
+          <input class="form-control" placeholder="Rate" type="text"
+                 formControlName="rate">
         </div>
         <br/>
         <div>
-          <button class="btn btn-primary btn-lg float-end" type="button" @click="save()">
-            <strong>Save</strong>
-          </button>
+          <button class="btn btn-primary btn-lg float-end" type="submit"><strong>Save</strong></button>
         </div>
       </form>
-      -->
     </div>
   </div>
 

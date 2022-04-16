@@ -1,5 +1,4 @@
 import {HttpParams} from '@angular/common/http';
-import {compare, password, required} from '@rxweb/reactive-form-validators';
 
 export enum EntityEvents {
   READ_LIST_NO_RECORDS,
@@ -76,13 +75,10 @@ export class ResponseEvent {
 
 export class SignUpDto {
 
-  @required()
   email: string;
 
-  @required()
   password: string;
 
-  // @required()
   // phone: string;
 
   constructor() {
@@ -92,10 +88,8 @@ export class SignUpDto {
 
 export class SignInDto {
 
-  @required()
   email: string;
 
-  @required()
   password: string;
 
   constructor() {
@@ -105,7 +99,6 @@ export class SignInDto {
 
 export class ResetPasswordDto {
 
-  @required()
   email: string;
 
   constructor() {
@@ -115,12 +108,8 @@ export class ResetPasswordDto {
 
 export class ChangePasswordDto {
 
-  // @password({validation: {maxLength: 10, minLength: 5, digit: true, specialCharacter: true}})
-  @required()
   newPassword: string;
 
-  @compare({fieldName: 'newPassword'})
-  @required()
   confirmPassword: string;
 
   constructor() {
