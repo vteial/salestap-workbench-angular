@@ -20,10 +20,7 @@
           </li>
         </ul>
         <div class="d-flex">
-          <button type="button" class="btn btn-outline-light me-4" (click)="goTo('/sign-in')">
-            <i class="bi bi-box-arrow-in-right px-1"></i>Sign In
-          </button>
-          <button type="button" class="btn btn-warning" (click)="goTo('/sign-out')">
+          <button type="button" class="btn btn-warning" (click)="signOut()">
             <i class="bi bi-box-arrow-in-left px-1"></i>Sign-Out
           </button>
         </div>
@@ -31,7 +28,12 @@
     </div>
   </nav>
   <div class="container p-1">
-    <strong>{{viewName}} hello...</strong>
+    <strong>{{viewName}}</strong>
+    <span class="float-end" *ngIf="userProfile">
+      <strong class="text-primary text-capitalize me-2">{{ userRole }}</strong>
+      /
+      <strong class="text-info ms-2">{{ userProfile.firstName }} {{ userProfile.lastName }}</strong>
+    </span>
   </div>
 </header>
 
