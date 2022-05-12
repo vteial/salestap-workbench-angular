@@ -37,12 +37,13 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   async ngOnInit() {
     let flag = await this.keycloak.isLoggedIn();
-    console.log(flag);
+    console.log('isLoggedIn : ' + flag);
     if (flag) {
       this.userProfile = await this.keycloak.loadUserProfile();
       if(this.keycloak.isUserInRole('wb-manager')) this.userRole = 'manager';
+    } else {
+      this.keycloak.login();
     }
-    console.log(window.location.origin);
   }
 
   ngAfterViewInit(): void {
@@ -55,15 +56,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   signOut(): void {
-    this.keycloak.logout(window.location.origin + '/');
-  /*
-    this.keycloak.logout().then((success) => {
-      console.log(success);
-      console.log('Successfully signed out...');
-    }).catch((error) => {
-      console.log(error);
-    });
-  */
+    this.keycloak.logout();
   }
 
   goTo(path: string): void {

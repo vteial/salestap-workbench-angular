@@ -9,20 +9,10 @@ export const environment = {
       realm: 'workbench',
       clientId: 'workbench-app',
     },
-    workbench_angularjs_vercel_app: {
-      url: 'http://localhost:9999/auth',
-      realm: 'workbench',
-      clientId: 'workbench-app-ngs',
-    },
     workbench_angular_vercel_app: {
       url: 'http://localhost:9999/auth',
       realm: 'workbench',
       clientId: 'workbench-app-ngx',
-    },
-    workbench_vue_vercel_app: {
-      url: 'http://localhost:9999/auth',
-      realm: 'workbench',
-      clientId: 'workbench-app-vue',
     }
   }
 };

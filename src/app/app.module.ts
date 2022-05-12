@@ -19,6 +19,7 @@ let hostname = window.location.hostname;
 hostname = hostname.replace(/\./gi, '_');
 hostname = hostname.replace(/\-/gi, '_');
 console.log('hostname: ' + hostname);
+console.log(environment.keycloak[hostname]);
 
 function initializeKeycloak(keycloak: KeycloakService) {
   return () =>

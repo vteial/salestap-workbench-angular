@@ -40,7 +40,7 @@
 <main role="main" class="container flex-shrink-0">
   <br/>
   <div class=".d-none .d-sm-block .d-md-none">&nbsp;</div>
-  <div><router-outlet></router-outlet></div>
+  <div><router-outlet (activate)='onActivate($event)'></router-outlet></div>
   <br/>
 </main>
 
